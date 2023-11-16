@@ -4,6 +4,8 @@
 # outputs from AgenaRisk except upper and lower most
 # these are AgenaRisk quantiles *0.25
 bn_data_quant <- data.frame(
+  # quantile produces sample quantiles corresponding to the given probabilities. 
+  # x = numeric vector whose sample quantiles are wanted
   energy_trees = quantile(x = c(-63118.75,-50495,-584610,341070,712510,890637.5)),
   energy_no_trees = quantile(x = c(-21932.5,-17546,-460170,364270,727770,909712.5)),
   iron_trees = quantile(x = c(-3701.625,-2961.3,-845.19,-332.15,2005.7,2507.125)),

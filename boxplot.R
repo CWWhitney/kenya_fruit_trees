@@ -1,3 +1,4 @@
+# Load libraries ####
 library(dplyr)
 library(ggcharts)
 library(ggplot2)
@@ -5,18 +6,6 @@ library(patchwork)
 library(magrittr)
 library(scales)
 
-# Source qualtiles data from AgenaRisk
-source(file = "data/bn_data_quant.R")
-
-ggplot(stack(bn_data_quant),
-       aes(x = ind, y = values)) +
-  # geom_jitter() +
-  geom_boxplot(alpha = I(1/4), aes(color = ind)) + 
-  scale_y_continuous(labels = scales::label_comma()) + 
-  theme_minimal() +
-  theme(legend.position = "none") +
-  theme(axis.title.y=element_blank()) + 
-  ggtitle("Overall plot")
 
 # source bn_data from AgenaRisk
 source(file = "data/bn_data.R")
@@ -51,59 +40,16 @@ zinc_overall <- plotted(data = bn_data, name = "zinc",
   theme(axis.title.x=element_blank())
 
 # Energy evpi data (top 10)   ####
-
-energy_evpi <- tibble::tribble(
-  ~evpi_term, ~evpi_value,
-  "Energy needs per person (kcal/yr) ", 287424,
-  "Energy intake (kcal/yr)", 283080,
-  "Household composition (nutrient demand groups) ", 277416,
-  "Fruit produced per person (kg/yr) ", 265247,
-  "Fruit production area per person (ha) ", 265247,
-  "Fruit production area (%) ", 265247,
-  "Fruit available per person (kg/yr) ", 265247,
-  "Fruit consumed per person (kg/yr) ", 265247,
-  "Energy from fruits per person (kcal/yr) ", 265247,
-  "Non fruit yield per person (kg/yr) ", 264776
-)
+source(file = "data/energy_evpi.R")
 
 # Iron evpi  ####
-
-iron_evpi <- tibble::tribble(
-  ~evpi_term, ~evpi_value,
-  "None", 0
-)
+source(file = "data/iron_evpi.R")
 
 # vit a evpi data (top 10) ####
-
-vit_A_evpi <- tibble::tribble(
-  ~evpi_term, ~evpi_value,
-  "Vitamin A intake (RAE/yr)", 90265,
-  "Vitamin A from fruits per person (RAE/yr) ", 69313,
-  "Fruit consumed per person (kg/yr) ", 69264,
-  "Fruit produced per person (kg/yr) ", 69262,
-  "Fruit production area per person (ha) ", 69262,
-  "Fruit available per person (kg/yr) ", 69262,
-  "Fruit production area (%) ", 69262,
-  "Vitamin A needs per person (RAE/yr) ", 38803,
-  "Vitamin A from off farm (RAE/yr) ", 33638,
-  "Off farm product consumed per person (kg/yr) ", 32555
-)
+source(file = "data/vit_A_evpi.R")
 
 # zinc evpi data top 10 ####
-
-zinc_evpi <- tibble::tribble(
-  ~evpi_term, ~evpi_value,
-  "Zinc intake (mg/yr) ", 1777,
-  "Zinc from fruits per person (mg/yr) ", 1760,
-  "Fruit consumed per person (kg/yr) ", 1755,
-  "Fruit available per person (kg/yr) ", 1755,
-  "Fruit produced per person (kg/yr) ", 1755,
-  "Fruit production area per person (ha) ", 1755,
-  "Fruit production area (%) ", 1755,
-  "Zinc from off farm (mg/yr) ", 1289,
-  "Off farm product consumed per person (kg/yr) ", 1283,
-  "Zinc needs per person (mg/yr) ", 1282
-)
+source(file = "data/zinc_evpi.R")
 
 #source evpi plot function
 source(file = "functions/evpi_chart.R")
