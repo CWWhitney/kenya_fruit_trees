@@ -45,11 +45,15 @@ expected benefits to the nutrition of farming households.
 
 ### Energy
 
-![Bayesian Network model of the household nutritional energy impacts of
-planting fruit trees on farms in Kenya. The model calculates
-probabilities for the expected impact on the annual energy intake gap
-among rural farming households given the intervention to provide
-planting materials for fruit trees.](Figures/AgenaRisk_Energy.png).
+<figure>
+<img src="Figures/AgenaRisk_Energy.png"
+alt="Bayesian Network model of the household nutritional energy impacts of planting fruit trees on farms in Kenya. The model calculates probabilities for the expected impact on the annual energy intake gap among rural farming households given the intervention to provide planting materials for fruit trees." />
+<figcaption aria-hidden="true">Bayesian Network model of the household
+nutritional energy impacts of planting fruit trees on farms in Kenya.
+The model calculates probabilities for the expected impact on the annual
+energy intake gap among rural farming households given the intervention
+to provide planting materials for fruit trees.</figcaption>
+</figure>
 
 For the results of the Value of information analysis see the full list
 of AgenaRisk generated [EV(P)PI and EV\|PI
@@ -61,12 +65,16 @@ all respective tables of probability.
 
 ### Iron
 
-![Bayesian Network model of the household nutritional impacts in terms
-of dietary iron of planting fruit trees on farms in Kenya. The model
-calculates probabilities for the expected impact on the annual iron
-intake gap among rural farming households given the intervention to
-provide planting materials for fruit
-trees.](figures/AgenaRisk_Iron.png).
+<figure>
+<img src="figures/AgenaRisk_Iron.png"
+alt="Bayesian Network model of the household nutritional impacts in terms of dietary iron of planting fruit trees on farms in Kenya. The model calculates probabilities for the expected impact on the annual iron intake gap among rural farming households given the intervention to provide planting materials for fruit trees." />
+<figcaption aria-hidden="true">Bayesian Network model of the household
+nutritional impacts in terms of dietary iron of planting fruit trees on
+farms in Kenya. The model calculates probabilities for the expected
+impact on the annual iron intake gap among rural farming households
+given the intervention to provide planting materials for fruit
+trees.</figcaption>
+</figure>
 
 For the results of the Value of information analysis see the full list
 of AgenaRisk generated [EV(P)PI and EV\|PI
@@ -78,11 +86,15 @@ all respective tables of probability.
 
 ### Vitamin A
 
-![Bayesian Network model of the household nutritional Vitamin A impacts
-of planting fruit trees on farms in Kenya. The model calculates
-probabilities for the expected change in the annual gap of Vitamin A
-intake among rural farming households given the intervention to provide
-planting materials for fruit trees.](figures/AgenaRisk_VitA.png).
+<figure>
+<img src="figures/AgenaRisk_VitA.png"
+alt="Bayesian Network model of the household nutritional Vitamin A impacts of planting fruit trees on farms in Kenya. The model calculates probabilities for the expected change in the annual gap of Vitamin A intake among rural farming households given the intervention to provide planting materials for fruit trees." />
+<figcaption aria-hidden="true">Bayesian Network model of the household
+nutritional Vitamin A impacts of planting fruit trees on farms in Kenya.
+The model calculates probabilities for the expected change in the annual
+gap of Vitamin A intake among rural farming households given the
+intervention to provide planting materials for fruit trees.</figcaption>
+</figure>
 
 For more information, and for running locally, see [the full model in
 AgenaRisk](./Models/BN_Model_Vit_A_170613.cmp). This includes all
@@ -95,11 +107,15 @@ display).
 
 ### Zinc
 
-![Bayesian Network model of the household nutritional Zinc impacts of
-planting fruit trees on farms in Kenya. The model calculates
-probabilities for the expected change in the annual gap of Zinc intake
-among rural farming households given the intervention to provide
-planting materials for fruit trees.](Figures/AgenaRisk_Zinc.png).
+<figure>
+<img src="Figures/AgenaRisk_Zinc.png"
+alt="Bayesian Network model of the household nutritional Zinc impacts of planting fruit trees on farms in Kenya. The model calculates probabilities for the expected change in the annual gap of Zinc intake among rural farming households given the intervention to provide planting materials for fruit trees." />
+<figcaption aria-hidden="true">Bayesian Network model of the household
+nutritional Zinc impacts of planting fruit trees on farms in Kenya. The
+model calculates probabilities for the expected change in the annual gap
+of Zinc intake among rural farming households given the intervention to
+provide planting materials for fruit trees.</figcaption>
+</figure>
 
 For more information on household nutritional Zinc impacts, and for
 running locally, see [the full model in
