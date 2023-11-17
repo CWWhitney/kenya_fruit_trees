@@ -49,14 +49,15 @@ expected benefits to the nutrition of farming households.
 planting fruit trees on farms in Kenya. The model calculates
 probabilities for the expected impact on the annual energy intake gap
 among rural farming households given the intervention to provide
-planting materials for fruit trees.](Figures/AgenaRisk_Energy.png). For
-the results of the Value of information analysis see the full list of
-AgenaRisk generated [EV(P)PI and EV\|PI
-values](./data/EVPI_Minimized/EVPI_Energy.html). We are mainly
-interested in the EVPI (last collection of values in the display). For
-more information, and for running locally, see [the full model in
-AgenaRisk](./Models/BN_Model_Energy_170613.cmp). This includes all
-respective tables of probability.
+planting materials for fruit trees.](Figures/AgenaRisk_Energy.png).
+
+For the results of the Value of information analysis see the full list
+of AgenaRisk generated [EV(P)PI and EV\|PI
+values](https://htmlpreview.github.io/?raw.githubusercontent.com/CWWhitney/kenya_fruit_trees/main/data/EVPI_Minimized/EVPI_Energy.html).
+We are mainly interested in the EVPI (last collection of values in the
+display). For more information, and for running locally, see [the full
+model in AgenaRisk](./Models/BN_Model_Energy_170613.cmp). This includes
+all respective tables of probability.
 
 ### Iron
 
@@ -65,13 +66,15 @@ of dietary iron of planting fruit trees on farms in Kenya. The model
 calculates probabilities for the expected impact on the annual iron
 intake gap among rural farming households given the intervention to
 provide planting materials for fruit
-trees.](figures/AgenaRisk_Iron.png). For the results of the Value of
-information analysis see the full list of AgenaRisk generated [EV(P)PI
-and EV\|PI values](./data/EVPI_Minimized/EVPI_Iron.html). We are mainly
-interested in the EVPI (last collection of values in the display). For
-more information, and for running locally, see [the full model in
-AgenaRisk](./Models/BN_Model_Iron_170613.cmp). This includes all
-respective tables of probability.
+trees.](figures/AgenaRisk_Iron.png).
+
+For the results of the Value of information analysis see the full list
+of AgenaRisk generated [EV(P)PI and EV\|PI
+values](https://htmlpreview.github.io/?raw.githubusercontent.com/CWWhitney/kenya_fruit_trees/main/data/EVPI_Minimized/EVPI_Iron.html).
+We are mainly interested in the EVPI (last collection of values in the
+display). For more information, and for running locally, see [the full
+model in AgenaRisk](./Models/BN_Model_Iron_170613.cmp). This includes
+all respective tables of probability.
 
 ### Vitamin A
 
@@ -79,13 +82,16 @@ respective tables of probability.
 of planting fruit trees on farms in Kenya. The model calculates
 probabilities for the expected change in the annual gap of Vitamin A
 intake among rural farming households given the intervention to provide
-planting materials for fruit trees.](figures/AgenaRisk_VitA.png). For
-more information, and for running locally, see [the full model in
+planting materials for fruit trees.](figures/AgenaRisk_VitA.png).
+
+For more information, and for running locally, see [the full model in
 AgenaRisk](./Models/BN_Model_Vit_A_170613.cmp). This includes all
 respective tables of probability. For the results of the Value of
 information analysis see the full list of AgenaRisk generated [EV(P)PI
-and EV\|PI values](./data/EVPI_Minimized/EVPI_Vit_A.html). We are mainly
-interested in the EVPI (last collection of values in the display).
+and EV\|PI
+values](https://htmlpreview.github.io/?raw.githubusercontent.com/CWWhitney/kenya_fruit_trees/main/data/EVPI_Minimized/EVPI_Vit_A.html).
+We are mainly interested in the EVPI (last collection of values in the
+display).
 
 ### Zinc
 
@@ -93,8 +99,10 @@ interested in the EVPI (last collection of values in the display).
 planting fruit trees on farms in Kenya. The model calculates
 probabilities for the expected change in the annual gap of Zinc intake
 among rural farming households given the intervention to provide
-planting materials for fruit trees.](Figures/AgenaRisk_Zinc.png). For
-more information, and for running locally, see [the full model in
+planting materials for fruit trees.](Figures/AgenaRisk_Zinc.png).
+
+For more information on household nutritional Zinc impacts, and for
+running locally, see [the full model in
 AgenaRisk](./Models/BN_Model_Zinc_170415.cmp). This includes all
 respective tables of probability. For the results of the Value of
 information analysis see the full list of AgenaRisk generated [EV(P)PI
