@@ -24,6 +24,7 @@ dot_plot <- function(data, name, title){
              y = values, 
              color = measure)) + # use color for different measures
     geom_point(size = 3) +
+    geom_line(size = 3) +
     geom_hline(aes(yintercept=0), 
                lty = "dotted", color= "dark grey", size=1) +
     scale_y_continuous(labels = scales::label_comma()) + # change ticks
@@ -31,9 +32,11 @@ dot_plot <- function(data, name, title){
     theme_minimal() + # remove background
     theme(legend.position = "bottom") + # place the legend at the bottom
     theme(axis.title.y = element_blank()) + # remove y-axis title
+    # Rotate x-axis labels by 45 degrees 
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
     theme(plot.margin = grid::unit(c(0,0,10,0), "mm")) + # adjust bottom margin for the legend
     ggtitle(title) + # unique titles
-    theme(plot.title = element_text(hjust = 1)) +
+    theme(plot.title = element_text(hjust = 0)) +
     labs(color = "") # add a legend title
 }
 

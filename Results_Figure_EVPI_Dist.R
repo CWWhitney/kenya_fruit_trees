@@ -36,8 +36,8 @@ zinc_overall <- dot_plot(data = dot_data,
                         name = "zinc", 
                         title = "Dietary zinc (mg/yr)") +  
   scale_x_discrete(labels=c("zinc_trees" = "With Trees", 
-                            "zinc_no_trees" = "Without Trees")) + 
-  theme(axis.text.x = element_text(size=14)) +
+                            "zinc_no_trees" = "No Trees")) + 
+  theme(axis.text.x = element_text(size=10)) +
   theme(axis.title.x=element_blank())
 
 # Energy evpi data (top 10)   ####
@@ -69,10 +69,10 @@ iron_overall + iron_evpi_chart +
 vit_a_overall + vit_A_evpi_chart +
 zinc_overall + zinc_evpi_chart +
   patchwork::plot_layout(ncol = 2, guides = "collect") + 
-  patchwork::plot_layout(widths = c(5, 5)) &
+  patchwork::plot_layout(widths = c(6, 4)) &
 theme(legend.position = "bottom") & 
   theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) # unit(c(top, right, bottom, left), "cm")
 
 # Save image as figure ####
 
-ggsave("Figures/results.png", width=10, height=9)
+ggsave("Figures/results.png", width=6, height=9)
