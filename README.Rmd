@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 Supplementary: Integration of fruit trees for better nutrition – Case study in Kenya
 
 Cory Whitney and Eike Luedeling
