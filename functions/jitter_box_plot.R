@@ -1,4 +1,5 @@
 # Overall plot
+#jitter_box_plot
 # Load libraries ####
 library(dplyr)
 library(ggcharts)
@@ -8,7 +9,7 @@ library(magrittr)
 library(scales)
 
 # function to plot overall  ####
-plotted <- function(data, name, title){
+jitter_box_plot <- function(data, name, title){
   dat <- data %>% dplyr::select(starts_with(name))
   ggplot(stack(dat), 
          aes(x = ind, 

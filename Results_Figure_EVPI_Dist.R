@@ -6,33 +6,34 @@ library(patchwork)
 library(magrittr)
 library(scales)
 
+source(file = "data/dot_data.R")
 
-# source bn_data from AgenaRisk
-source(file = "data/bn_data.R")
+source(file = "functions/dot_plot.R")
 
-# plotted function for overall plots
-source(file = "functions/plotted.R")
-
-# overall plots ####
-energy_overall <- plotted(data = bn_data, name = "energy", 
+# overall jitter_box_plot plots ####
+energy_overall <- dot_plot(data = dot_data, 
+                           name = "energy", 
                           title = "Dietary energy (kcal/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank()) 
 
-iron_overall <- plotted(data = bn_data, name = "iron", 
+iron_overall <- dot_plot(data = dot_data, 
+                         name = "iron", 
                         title = "Dietary iron (mg/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank())
 
-vit_a_overall <- plotted(data = bn_data, name = "vitA", 
+vit_a_overall <- dot_plot(data = dot_data,  
+                         name = "vitA", 
                          title = "Dietary vitamin A (RAE/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank())
 
-zinc_overall <- plotted(data = bn_data, name = "zinc", 
+zinc_overall <- dot_plot(data = dot_data, 
+                        name = "zinc", 
                         title = "Dietary zinc (mg/yr)") +  
   scale_x_discrete(labels=c("zinc_trees" = "With Trees", 
                             "zinc_no_trees" = "Without Trees")) + 
@@ -68,9 +69,10 @@ iron_overall + iron_evpi_chart +
 vit_a_overall + vit_A_evpi_chart +
 zinc_overall + zinc_evpi_chart +
   plot_layout(ncol = 2, guides = "collect") + 
-  plot_layout(widths = c(4, 1))
+  plot_layout(widths = c(4, 1)) &
+theme(legend.position = "bottom") & 
+  theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) # unit(c(top, right, bottom, left), "cm")
 
 # Save image as figure ####
 
 ggsave("Figures/results.png", width=10, height=9)
-
