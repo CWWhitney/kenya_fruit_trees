@@ -34,6 +34,6 @@ dot_plot <- function(data, name, title){
     theme(plot.margin = grid::unit(c(0,0,10,0), "mm")) + # adjust bottom margin for the legend
     ggtitle(title) + # unique titles
     theme(plot.title = element_text(hjust = 1)) +
-    labs(color = "Measure") # add a legend title
+    labs(color = "") # add a legend title
 }
 

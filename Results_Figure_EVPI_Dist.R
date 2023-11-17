@@ -68,8 +68,8 @@ energy_overall + energy_evpi_chart +
 iron_overall + iron_evpi_chart +
 vit_a_overall + vit_A_evpi_chart +
 zinc_overall + zinc_evpi_chart +
-  plot_layout(ncol = 2, guides = "collect") + 
-  plot_layout(widths = c(4, 1)) &
+  patchwork::plot_layout(ncol = 2, guides = "collect") + 
+  patchwork::plot_layout(widths = c(5, 5)) &
 theme(legend.position = "bottom") & 
   theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) # unit(c(top, right, bottom, left), "cm")
 
