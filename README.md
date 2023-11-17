@@ -66,7 +66,7 @@ all respective tables of probability.
 ### Iron
 
 <figure>
-<img src="figures/AgenaRisk_Iron.png"
+<img src="Figures/AgenaRisk_Iron.png"
 alt="Bayesian Network model of the household nutritional impacts in terms of dietary iron of planting fruit trees on farms in Kenya. The model calculates probabilities for the expected impact on the annual iron intake gap among rural farming households given the intervention to provide planting materials for fruit trees." />
 <figcaption aria-hidden="true">Bayesian Network model of the household
 nutritional impacts in terms of dietary iron of planting fruit trees on
@@ -87,7 +87,7 @@ all respective tables of probability.
 ### Vitamin A
 
 <figure>
-<img src="figures/AgenaRisk_VitA.png"
+<img src="Figures/AgenaRisk_VitA.png"
 alt="Bayesian Network model of the household nutritional Vitamin A impacts of planting fruit trees on farms in Kenya. The model calculates probabilities for the expected change in the annual gap of Vitamin A intake among rural farming households given the intervention to provide planting materials for fruit trees." />
 <figcaption aria-hidden="true">Bayesian Network model of the household
 nutritional Vitamin A impacts of planting fruit trees on farms in Kenya.
