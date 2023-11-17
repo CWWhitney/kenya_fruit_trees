@@ -3,7 +3,6 @@ Supplementary: Integration of fruit trees for better nutrition – Case study in
 Cory Whitney and Eike Luedeling
 University of Bonn
 
-
 ## Bayesian Network models 
 
 The Bayesian Network models are given below. The green nodes within the ‘Production’ sub-module illustrate the computation used to arrive at the volume, quality and nutrient content of the available fruit. The purple nodes within the ‘Household’ sub-module represent household composition. Together these illustrate the computation used to arrive at the household fruit consumption potential, labor availability, and nutrient needs per year and per farm. The values generated for nutrient intakes and demands are generated based on the types of individuals represented in the ‘Household Composition (nutrient demand groups)’ node. The node states are ‘Healthy pregnant woman’, ‘Healthy lactating woman’, ‘Healthy not reproducing woman’, ‘Unhealthy pregnant woman’, ‘Unhealthy lactating woman’, ‘Unhealthy not reproducing woman’, ‘Healthy man’, ‘Unhealthy man’, ‘Healthy adolescent’, ‘Unhealthy adolescent’, ‘Healthy child’, ‘Unhealthy child’, ‘Healthy infant’, ‘Unhealthy infant’, ‘Healthy elderly’, and ‘Unhealthy elderly. Specific information about the needs of these is shown in the Supplementary (Luedeling and Whitney 2018). 
