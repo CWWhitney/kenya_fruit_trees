@@ -15,7 +15,7 @@ library(scales)
 # pertinent to our current investigation
 # energy with trees in a scenario where trees were introduced
 energy_df_treesnode_yes_treesyes <- read.csv("data/energy_scenario_trees_treesnode_yes.csv", skip = 12)
-
+source(file = "functions/combine_bins_energy.R")
 combined_energy_trees <- combine_bins(energy_df_treesnode_yes_treesyes) 
 # energy with no trees in a scenario where trees were introduced
 energy_df_treesnode_yes_treesno  <- read.csv("data/energy_scenario_notrees_treesnode_yes.csv", skip = 12)

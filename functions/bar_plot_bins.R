@@ -12,7 +12,7 @@ bar_plot_bins <- function(data_trees, data_no_trees, title) {
   #
   # Add labels
   label_names <- if (nrow(data_trees) == 8) {
-    c("High surplus", "Surplus", "Slight surplus", "Balanced", "Slightly lacking", "Lacking", "Highly lacking", "Extremely lacking")
+    c("Surplus", "Slight surplus", "Balanced", "Slightly lacking", "Lacking", "Highly lacking", "Extremely lacking","Seriously food insecure")
   } else {
     c("Slight surplus", "Balanced", "Slightly lacking", "Lacking")
   }
@@ -43,6 +43,6 @@ bar_plot_bins <- function(data_trees, data_no_trees, title) {
     # Rotate x-axis labels by 45 degrees 
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
     theme(plot.title = element_text(hjust = 0)) +
-    scale_fill_manual(values = c("#FFA500", "#FFD700")) +
+    scale_fill_manual(values = c("grey", "#E69F00")) +
     labs(fill = NULL)  # remove legend title
 }
