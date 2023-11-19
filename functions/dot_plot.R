@@ -24,10 +24,9 @@ dot_plot <- function(data, name, title){
              y = values, 
              color = measure)) + # use color for different measures
     geom_point(size = 3) +
-    geom_line(size = 3) +
     geom_hline(aes(yintercept=0), 
                lty = "dotted", color= "dark grey", size=1) +
-    scale_y_continuous(labels = scales::label_comma()) + # change ticks
+    scale_y_continuous(trans = "reverse", labels = scales::label_comma()) + # change ticks
     scale_color_manual(values = subdued_palette) + 
     theme_minimal() + # remove background
     theme(legend.position = "bottom") + # place the legend at the bottom
