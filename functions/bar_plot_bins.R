@@ -12,7 +12,7 @@ bar_plot_bins <- function(data_trees, data_no_trees, title) {
   #
   # Add labels
   label_names <- if (nrow(data_trees) == 8) {
-    c("Surplus", "Slight surplus", "Balanced", "Slightly lacking", "Lacking", "Highly lacking", "Extremely lacking","Seriously food insecure")
+    c("Abundant", "Adequate", "Balanced", "Insufficient", "Deficient", "Highly Deficient", "Critical Deficiency", "Food Insecurity")
   } else {
     c("Slight surplus", "Balanced", "Slightly lacking", "Lacking")
   }
