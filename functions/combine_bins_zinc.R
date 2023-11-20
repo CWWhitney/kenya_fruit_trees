@@ -2,33 +2,44 @@
 
 library(dplyr)
 
+# # zinc ####
+#     # Surplus: Zinc levels significantly above the recommended range.
+#     # Adequate: Zinc levels within the recommended range.
+#     # Slightly Lacking: Slightly below the ideal, but not critically low.
+#     # Mildly Lacking: Deficient in zinc but not severely so.
+#     # Moderately Lacking: A significant zinc deficit.
+#     # Severely Lacking: Severely lacking in zinc, potentially harmful.
+#     # Extremely Lacking: Extremely low levels, indicating a serious lack of dietary zinc.
+#     # Seriously Food Insecure: A critical deficiency in zinc, posing severe health risks.
+#     # 
+
 # combine_bins
 # function to combine the high and low value bins for the BNs
 # from the csv output of AgenaRisk
 combine_bins_zinc <- function(df){
   df_new_top <- df %>%
-    slice_head(n = 2) %>%
+    slice_head(n = 7) %>%
     summarise(
       Lower.Bound = min(Lower.Bound),
       Upper.Bound = max(Upper.Bound),
       Value = sum(Value)
     )
   
-  # keep the bottom 6 
+  # keep the bottom 
   df <- df %>%
-    slice_tail(n = 6)
+    slice_tail(n = 9)
   
   df_new_bottom <- df %>%
-    slice_tail(n = 2) %>%
+    slice_tail(n = 3) %>%
     summarise(
       Lower.Bound = min(Lower.Bound),
       Upper.Bound = max(Upper.Bound),
       Value = sum(Value)
     )
   
-  # keep the top 4 
+  # keep the top 6 
   df <- df %>%
-    slice_head(n = 4)
+    slice_head(n = 6)
   
   # Concatenate the new row at the head and tail
   df <- bind_rows(df_new_top, df)
@@ -37,5 +48,13 @@ combine_bins_zinc <- function(df){
   df <- df %>%
     arrange(Upper.Bound)
   
-  return(df)
+  # Add labels
+  
+  label_names <- c("Surplus", "Adequate", "Slightly Lacking", "Mildly Lacking", "Moderately Lacking", "Severely Lacking", "Extremely Lacking", "Seriously Food Insecure")
+       
+  label_values <- factor(1:length(label_names), labels = label_names)
+  
+  data <- mutate(df, Bin = label_values)
+  
+  return(data)
 } 

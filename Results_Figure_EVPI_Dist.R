@@ -31,8 +31,11 @@ combined_iron_notrees <- combine_bins_iron(iron_df_treesnode_yes_treesno)
 
 # vitA with trees in a scenario where trees were introduced
 vitA_df_treesnode_yes_treesyes <- read.csv("data/vitA_scenario_trees_treesnode_yes.csv", skip = 12)
+source(file = "functions/combine_bins_vitA.R")
+combined_vitA_trees <- combine_bins_vitA(vitA_df_treesnode_yes_treesyes)
 # vitA with no trees in a scenario where trees were introduced
 vitA_df_treesnode_yes_treesno  <- read.csv("data/vitA_scenario_notrees_treesnode_yes.csv", skip = 12)
+combined_vitA_notrees <- combine_bins_vitA(vitA_df_treesnode_yes_treesno)
 
 # zinc with trees in a scenario where trees were introduced
 zinc_df_treesnode_yes_treesyes <- read.csv("data/zinc_scenario_trees_treesnode_yes.csv", skip = 12)
@@ -59,8 +62,8 @@ iron_overall <- bar_plot_bins(data_trees = combined_iron_trees,
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank())
 
-vit_a_overall <- bar_plot_bins(data_trees = vitA_df_treesnode_yes_treesyes, 
-                                data_no_trees = vitA_df_treesnode_yes_treesno, 
+vit_a_overall <- bar_plot_bins(data_trees = combined_vitA_trees, 
+                                data_no_trees = combined_vitA_notrees, 
                          title = "Dietary vitamin A (RAE/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
