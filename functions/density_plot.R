@@ -1,6 +1,6 @@
 source(file = "functions/density_estimate.R")
-iron_df_treesnode_yes_treesyes
-iron_df_treesnode_yes_treesno
+
+# provides a kernel density estimate for the combined data.
 
 density_plot <- function(data_trees, data_no_trees, title){
 
