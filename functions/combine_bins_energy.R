@@ -1,7 +1,7 @@
-# combine_bins
+# combine_bins_energy
 # function to combine the high and low value bins for the BNs
 # from the csv output of AgenaRisk
-combine_bins <- function(df){
+combine_bins_energy <- function(df){
   df_new_top <- df %>%
     slice_head(n = 2) %>%
     summarise(
