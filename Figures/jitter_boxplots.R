@@ -31,3 +31,15 @@ zinc_overall <- jitter_box_plot(data = bn_data, name = "zinc",
                             "zinc_no_trees" = "Without Trees")) + 
   theme(axis.text.x = element_text(size=14)) +
   theme(axis.title.x=element_blank())
+
+
+energy_overall + iron_overall  +
+  vit_a_overall  + zinc_overall  +
+  patchwork::plot_layout(ncol = 2, guides = "collect") + 
+  patchwork::plot_layout(widths = c(5, 5)) &
+  theme(legend.position = "bottom") & 
+  theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) # unit(c(top, right, bottom, left), "cm")
+
+# Save image as figure ####
+
+ggsave("Figures/jitter_boxplots.png", width=6, height=9)

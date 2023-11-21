@@ -42,3 +42,15 @@ zinc_overall <- bar_plot_bins(data_trees = combined_zinc_trees,
   scale_x_discrete(labels=c("zinc_trees" = "With Trees", 
                             "zinc_no_trees" = "No Trees")) + 
   theme(axis.text.x = element_text(size=10))
+
+
+energy_overall + iron_overall  +
+  vit_a_overall  + zinc_overall  +
+  patchwork::plot_layout(ncol = 2, guides = "collect") + 
+  patchwork::plot_layout(widths = c(5, 5)) &
+  theme(legend.position = "bottom") & 
+  theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) # unit(c(top, right, bottom, left), "cm")
+
+# Save image as figure ####
+
+ggsave("Figures/bar_plots.png", width=6, height=9)

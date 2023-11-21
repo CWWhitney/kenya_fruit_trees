@@ -48,7 +48,7 @@ zinc_trees <- combine_bins_zinc(zinc_df_treesnode_yes_treesyes)
 zinc_notrees <- combine_bins_zinc(zinc_df_treesnode_yes_treesno)
 
 histogram_trees
-# overall density plots ####
+# overall histogram plots ####
 source(file = "functions/histogram_trees.R")
 
 energy_overall <- histogram_trees(data_trees = energy_trees, 
@@ -67,6 +67,7 @@ iron_overall <- histogram_trees(data_trees = iron_trees,
 
 vit_a_overall <- histogram_trees(data_trees = vitA_trees, 
                                  data_notrees = vitA_notrees,
+                                 width = 299998,
                          title = "Dietary vitamin A (RAE/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),

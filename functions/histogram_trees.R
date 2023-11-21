@@ -1,4 +1,4 @@
-histogram_trees <- function(data_trees, data_notrees, title){
+histogram_trees <- function(data_trees, data_notrees, title, width = "default"){
   
   library(ggplot2)
   
@@ -10,8 +10,11 @@ histogram_trees <- function(data_trees, data_notrees, title){
   )
   
   # Calculate the width based on the range of Lower.Bound and Upper.Bound
-  bin_width <- mean(diff(c(combined_data$Lower.Bound, combined_data$Upper.Bound)))
-  
+  if (width == "default") {
+    bin_width <- mean(diff(c(combined_data$Lower.Bound, combined_data$Upper.Bound)))
+  } else {
+    bin_width <- width
+  }
   
   # Create a ggplot with overlaid histograms
   ggplot(combined_data, aes(x = (Lower.Bound + Upper.Bound) / 2, y = Value, fill = Scenario)) +
@@ -26,7 +29,8 @@ histogram_trees <- function(data_trees, data_notrees, title){
          y = "Probability") +
     theme_minimal() + 
     scale_y_continuous(labels = label_number()) +
-    scale_x_continuous(labels = scales::label_number()) +
+    # scale_x_continuous(labels = scales::label_number()) +
+    scale_x_reverse(labels = scales::label_number()) +
     coord_flip() +
     theme(legend.position = "bottom",
           axis.title.y = element_blank(),
