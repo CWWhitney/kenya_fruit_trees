@@ -1,0 +1,12 @@
+# calculate density estimates
+
+# density estimates for comparison
+source(file = "functions/density_estimate.R")
+density_estimate(energy_df_treesnode_yes_treesyes)
+density_estimate(energy_df_treesnode_yes_treesno)
+density_estimate(iron_df_treesnode_yes_treesyes)
+density_estimate(iron_df_treesnode_yes_treesno)
+density_estimate(vitA_df_treesnode_yes_treesyes)
+density_estimate(vitA_df_treesnode_yes_treesno)
+density_estimate(zinc_df_treesnode_yes_treesyes)
+density_estimate(zinc_df_treesnode_yes_treesno)

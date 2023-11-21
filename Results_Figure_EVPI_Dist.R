@@ -33,33 +33,47 @@ zinc_df_treesnode_yes_treesyes <- read.csv("data/zinc_scenario_trees_treesnode_y
 # zinc with no trees in a scenario where trees were introduced
 zinc_df_treesnode_yes_treesno  <- read.csv("data/zinc_scenario_notrees_treesnode_yes.csv", skip = 12)
 
-source(file = "functions/density_estimate.R")
-source(file = "functions/density_plot.R")
+# density estimates for comparison
+source(file = "functions/combine_bins_energy.R")
+energy_trees <- combine_bins_energy(energy_df_treesnode_yes_treesyes)
+energy_notrees <- combine_bins_energy(energy_df_treesnode_yes_treesno)
+source(file = "functions/combine_bins_iron.R")
+iron_trees <- combine_bins_iron(iron_df_treesnode_yes_treesyes)
+iron_notrees <- combine_bins_iron(iron_df_treesnode_yes_treesno)
+source(file = "functions/combine_bins_vitA.R")
+vitA_trees <- combine_bins_vitA(vitA_df_treesnode_yes_treesyes)
+vitA_notrees <- combine_bins_vitA(vitA_df_treesnode_yes_treesno)
+source(file = "functions/combine_bins_zinc.R")
+zinc_trees <- combine_bins_zinc(zinc_df_treesnode_yes_treesyes)
+zinc_notrees <- combine_bins_zinc(zinc_df_treesnode_yes_treesno)
 
+histogram_trees
 # overall density plots ####
-energy_overall <- density_plot(data_trees = energy_df_treesnode_yes_treesyes, 
-                                data_no_trees = energy_df_treesnode_yes_treesno, 
+source(file = "functions/histogram_trees.R")
+
+energy_overall <- histogram_trees(data_trees = energy_trees, 
+                                data_notrees = energy_notrees,
                           title = "Dietary energy (kcal/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank()) 
 
-iron_overall <- density_plot(data_trees = iron_df_treesnode_yes_treesyes, 
-                              data_no_trees = iron_df_treesnode_yes_treesno,
+iron_overall <- histogram_trees(data_trees = iron_trees, 
+                                data_notrees = iron_notrees,
                         title = "Dietary iron (mg/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank())
 
-vit_a_overall <- density_plot(data_trees = vitA_df_treesnode_yes_treesyes, 
-                                data_no_trees = vitA_df_treesnode_yes_treesno, 
+vit_a_overall <- histogram_trees(data_trees = vitA_trees, 
+                                 data_notrees = vitA_notrees,
                          title = "Dietary vitamin A (RAE/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank())
 
-zinc_overall <- density_plot(data_trees = zinc_df_treesnode_yes_treesyes, 
-                              data_no_trees = zinc_df_treesnode_yes_treesno,
+zinc_overall <- histogram_trees(data_trees = zinc_trees, 
+                                data_notrees = zinc_notrees,
                         title = "Dietary zinc (mg/yr)") + 
   theme(axis.text.x = element_text())
 

@@ -16,4 +16,6 @@ density_estimate <-function(data){
   # Use density estimation to create a kernel density estimate
   density_estimate <- density(combined_data$Bounds, 
                               weights = combined_data$Value)
+  
+  density_estimate
 }
