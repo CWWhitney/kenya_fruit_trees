@@ -16,17 +16,12 @@ histogram_trees <- function(data_trees, data_notrees, title, width = "default"){
     bin_width <- width
   }
   
+
   # Create a ggplot with overlaid histograms
   ggplot(combined_data, aes(x = (Lower.Bound + Upper.Bound) / 2, y = Value, fill = Scenario)) +
-    # geom_histogram(stat = "identity", color = NA, 
-    #                alpha = 0.5, position = "identity", 
-    #                binwidth = 5000000) +
     geom_bar(stat = "identity", 
              alpha = 0.5, position = "identity", 
              width = bin_width) +  # Adjust the width parameter
-    labs(title = title,
-         x = "Energy Gap",
-         y = "Probability") +
     theme_minimal() + 
     scale_y_continuous(labels = label_number()) +
     # scale_x_continuous(labels = scales::label_number()) +
@@ -40,7 +35,8 @@ histogram_trees <- function(data_trees, data_notrees, title, width = "default"){
           legend.title = element_blank()) +  # Remove legend title
     ggtitle(title) +
     labs(fill = NULL) +
-    scale_fill_manual(values = c("grey", "#E69F00"))
+    scale_fill_manual(values = c("grey", "#E69F00"))+
+    ylab("Probability") 
   
   
 }

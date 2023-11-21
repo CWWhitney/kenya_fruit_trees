@@ -37,6 +37,10 @@ combine_bins_iron <- function(df){
     arrange(Upper.Bound)
   
   # Iron categories ####
+  
+  # based on various types of household members -- 
+  # See tables from Trumbo et al. 2500 to 6500 roughly
+  
   # Excess: Iron levels above the recommended range.
   # Adequate: Iron levels within the recommended range.
   # Mild Deficiency: Slightly below the recommended range, but not critically low.
@@ -44,11 +48,10 @@ combine_bins_iron <- function(df){
   # Severe Deficiency: A significant iron deficit.
   # Critical Deficiency: Severely lacking in iron, potentially harmful.
   # Extreme Deficiency: Extremely low levels, indicating a serious lack of dietary iron.
-  
+  # 
   
   # Add labels for iron
   label_names <-  c("Excess", "Adequate", "Mild Deficiency", "Moderate Deficiency", "Severe Deficiency", "Critical Deficiency", "Extreme Deficiency")
-  
   
   label_values <- factor(1:length(label_names), labels = label_names)
   

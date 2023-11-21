@@ -47,36 +47,44 @@ source(file = "functions/combine_bins_zinc.R")
 zinc_trees <- combine_bins_zinc(zinc_df_treesnode_yes_treesyes)
 zinc_notrees <- combine_bins_zinc(zinc_df_treesnode_yes_treesno)
 
-histogram_trees
-# overall histogram plots ####
-source(file = "functions/histogram_trees.R")
+# plot with bar plots
+source(file = "functions/bar_plot_bins.R")
 
-energy_overall <- histogram_trees(data_trees = energy_trees, 
-                                data_notrees = energy_notrees,
-                          title = "Dietary energy (kcal/yr)") + 
+energy_overall <- bar_plot_bins(data_trees = energy_trees, 
+                                data_no_trees = energy_notrees, 
+                                title = "Dietary energy (kcal/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank()) 
 
-iron_overall <- histogram_trees(data_trees = iron_trees, 
-                                data_notrees = iron_notrees,
-                        title = "Dietary iron (mg/yr)") + 
+iron_overall <- bar_plot_bins(data_trees = iron_trees, 
+                              data_no_trees = iron_notrees,
+                              title = "Dietary iron (mg/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank())
 
-vit_a_overall <- histogram_trees(data_trees = vitA_trees, 
-                                 data_notrees = vitA_notrees,
-                                 width = 299998,
-                         title = "Dietary vitamin A (RAE/yr)") + 
+vit_a_overall <- bar_plot_bins(data_trees = vitA_trees, 
+                               data_no_trees = vitA_notrees, 
+                               title = "Dietary vitamin A (RAE/yr)") + 
   theme(axis.title.x=element_blank(),
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank())
 
-zinc_overall <- histogram_trees(data_trees = zinc_trees, 
-                                data_notrees = zinc_notrees,
-                        title = "Dietary zinc (mg/yr)") + 
-  theme(axis.text.x = element_text())
+zinc_overall <- bar_plot_bins(data_trees = zinc_trees, 
+                              data_no_trees = zinc_notrees,
+                              title = "Dietary zinc (mg/yr)") +  
+  scale_x_discrete(labels=c("zinc_trees" = "With Trees", 
+                            "zinc_no_trees" = "No Trees")) + 
+  theme(axis.text.x = element_text(size=10))
+
+
+energy_overall + iron_overall  +
+  vit_a_overall  + zinc_overall  +
+  patchwork::plot_layout(ncol = 2, guides = "collect") + 
+  patchwork::plot_layout(widths = c(5, 5)) &
+  theme(legend.position = "bottom") & 
+  theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) # unit(c(top, right, bottom, left), "cm")
 
 # Energy evpi data (top 10)   ####
 source(file = "data/energy_evpi.R")
@@ -113,4 +121,4 @@ theme(legend.position = "bottom") &
 
 # Save image as figure ####
 
-ggsave("Figures/results.png", width=6, height=9)
+ggsave("Figures/results.png", width=7, height=9)

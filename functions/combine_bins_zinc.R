@@ -30,16 +30,16 @@ combine_bins_zinc <- function(df){
     slice_tail(n = 9)
   
   df_new_bottom <- df %>%
-    slice_tail(n = 3) %>%
+    slice_tail(n = 4) %>%
     summarise(
       Lower.Bound = min(Lower.Bound),
       Upper.Bound = max(Upper.Bound),
       Value = sum(Value)
     )
   
-  # keep the top 6 
+  # keep the top 
   df <- df %>%
-    slice_head(n = 6)
+    slice_head(n = 5)
   
   # Concatenate the new row at the head and tail
   df <- bind_rows(df_new_top, df)
@@ -50,7 +50,19 @@ combine_bins_zinc <- function(df){
   
   # Add labels
   
-  label_names <- c("Surplus", "Adequate", "Slightly Lacking", "Mildly Lacking", "Moderately Lacking", "Severely Lacking", "Extremely Lacking", "Seriously Food Insecure")
+  # based on various types of household members -- 
+  # See tables from Trumbo et al. 3 to 4 thousand roughly
+  
+  # Excess: Iron levels above the recommended range.
+  # Adequate: Iron levels within the recommended range.
+  # Mild Deficiency: Slightly below the recommended range, but not critically low.
+  # Moderate Deficiency: Deficient in iron but not severely so.
+  # Severe Deficiency: A significant iron deficit.
+  # Critical Deficiency: Severely lacking in iron, potentially harmful.
+  # Extreme Deficiency: Extremely low levels, indicating a serious lack of dietary iron.
+  # 
+  
+  label_names <- c("Surplus", "Adequate", "Slightly Lacking", "Mildly Lacking", "Moderately Lacking", "Severely Lacking", "Extremely Lacking")
        
   label_values <- factor(1:length(label_names), labels = label_names)
   

@@ -2,14 +2,18 @@
 library(dplyr)
 
 # # VitA categories####
+
+# based on various types of household members -- 
+# See tables from Trumbo et al. 219000 to 328500 roughly
+
 #     # Deficient: Vitamin A levels significantly below the recommended range.
 #     # Insufficient: Vitamin A levels slightly below the recommended range but not critically low.
 #     # Adequate: Vitamin A levels within the recommended range.
 #     # Optimal: Vitamin A levels above the recommended range.
 
-
 # function to combine the high and low value bins for the BNs
 # from the csv output of AgenaRisk
+
 combine_bins_vitA <- function(df){
   
   label_names <-  c("Slight surplus", "Balanced", "Slightly lacking", "Lacking")
