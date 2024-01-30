@@ -50,33 +50,45 @@ zinc_notrees <- combine_bins_zinc(zinc_df_treesnode_yes_treesno)
 # plot with bar plots
 source(file = "functions/bar_plot_bins.R")
 
-energy_overall <- bar_plot_bins(data_trees = energy_trees, 
+energy_overall <- density_plot(data_trees = energy_trees, 
                                 data_no_trees = energy_notrees, 
+                               # Value to add a grey point at placeholder
+                               sufficient = 730000, # 2000 * 365
                                 title = "Dietary energy (kcal/yr)") + 
-  theme(axis.title.x=element_blank(),
-        axis.ticks.x = element_blank(),
-        axis.text.x = element_blank()) 
+  ggtitle("Probability Density") + 
+  theme(axis.title.x = element_blank())
 
-iron_overall <- bar_plot_bins(data_trees = iron_trees, 
+iron_overall <- density_plot(data_trees = iron_trees, 
                               data_no_trees = iron_notrees,
+                             sufficient = 5110, # 14*365 roughly
+                             # National Institutes of Health (NIH)
+                             # Adult males (19 years and older): 8 mg
+                             # Adult females (19-50 years): 18 mg
+                             # Adult females (51 years and older): 8 mg
+                             # Pregnant females: 27 mg
+                             # Lactating females: 9 mg
                               title = "Dietary iron (mg/yr)") + 
-  theme(axis.title.x=element_blank(),
-        axis.ticks.x = element_blank(),
-        axis.text.x = element_blank())
+  theme(axis.title.x = element_blank())
 
-vit_a_overall <- bar_plot_bins(data_trees = vitA_trees, 
+
+
+vit_a_overall <- density_plot(data_trees = vitA_trees, 
                                data_no_trees = vitA_notrees, 
+                              sufficient = 292000, # 800*365 roughly
+                              # Adult males (19 years and older): 900 micrograms RAE (Retinol Activity Equivalents) per day
+                              # Adult females (19 years and older): 700 micrograms RAE per day
                                title = "Dietary vitamin A (RAE/yr)") + 
-  theme(axis.title.x=element_blank(),
-        axis.ticks.x = element_blank(),
-        axis.text.x = element_blank())
+  theme(axis.title.x = element_blank())
 
-zinc_overall <- bar_plot_bins(data_trees = zinc_trees, 
+
+zinc_overall <- density_plot(data_trees = zinc_trees, 
                               data_no_trees = zinc_notrees,
-                              title = "Dietary zinc (mg/yr)") +  
-  scale_x_discrete(labels=c("zinc_trees" = "With Trees", 
-                            "zinc_no_trees" = "No Trees")) + 
-  theme(axis.text.x = element_text(size=10))
+                             # Adult males (19 years and older): 11 mg per day
+                            # Adult females (19 years and older): 8 mg per day
+                            sufficient = 3467, # roughly 9.5 per day
+                              title = "Dietary zinc (mg/yr)") + 
+  labs(x="Sufficient when above \u25CF")
+
 
 
 energy_overall + iron_overall  +
@@ -117,7 +129,8 @@ zinc_overall + zinc_evpi_chart +
   patchwork::plot_layout(ncol = 2, guides = "collect") + 
   patchwork::plot_layout(widths = c(6, 4)) &
 theme(legend.position = "bottom") & 
-  theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) # unit(c(top, right, bottom, left), "cm")
+  theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))  # unit(c(top, right, bottom, left), "cm")
+
 
 # Save image as figure ####
 
