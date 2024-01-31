@@ -49,6 +49,7 @@ zinc_notrees <- combine_bins_zinc(zinc_df_treesnode_yes_treesno)
 
 # plot with bar plots
 source(file = "functions/bar_plot_bins.R")
+source(file = "functions/density_plot.R")
 
 energy_overall <- density_plot(data_trees = energy_trees, 
                                 data_no_trees = energy_notrees, 
@@ -122,15 +123,16 @@ zinc_evpi_chart <- evpi_chart(zinc_evpi)
 
 # plot all together ####
 
-energy_overall + energy_evpi_chart +
+results_plot <- energy_overall + energy_evpi_chart +
 iron_overall + iron_evpi_chart +
 vit_a_overall + vit_A_evpi_chart +
 zinc_overall + zinc_evpi_chart +
   patchwork::plot_layout(ncol = 2, guides = "collect") + 
   patchwork::plot_layout(widths = c(6, 4)) &
 theme(legend.position = "bottom") & 
-  theme(plot.margin = unit(c(0, 0, 0, 0), "cm"))  # unit(c(top, right, bottom, left), "cm")
-
+  theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) # unit(c(top, right, bottom, left), "cm")
+  results_plot + plot_annotation(tag_levels = 'A')& 
+    theme(plot.tag = element_text(size = 9))
 
 # Save image as figure ####
 
