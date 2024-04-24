@@ -2,6 +2,8 @@
 Supplementary: Integration of fruit trees for better nutrition – Case
 study in Kenya
 
+[![DOI](https://zenodo.org/badge/341511329.svg)](https://zenodo.org/doi/10.5281/zenodo.11048493)
+
 Cory Whitney and Eike Luedeling University of Bonn
 
 ## Bayesian Network models
