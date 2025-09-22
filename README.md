@@ -1,8 +1,7 @@
 
-Supplementary: Integration of fruit trees for better nutrition – Case
-study in Kenya
-
-[![DOI](https://zenodo.org/badge/341511329.svg)](https://zenodo.org/doi/10.5281/zenodo.11048493)
+Supplementary: Operationalizing theories of change for enhanced
+nutrition impact: A case study of fruit tree interventions on
+smallholder farms in Kenya
 
 Cory Whitney and Eike Luedeling University of Bonn
 
